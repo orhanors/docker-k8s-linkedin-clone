@@ -1,0 +1,12 @@
+FROM node:15-alpine
+
+RUN apk update && apk add python2 make g++
+WORKDIR /app
+
+COPY ./package*.json ./
+
+RUN npm i
+
+COPY . . 
+
+CMD ["npm","start"]
