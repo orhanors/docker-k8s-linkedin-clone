@@ -1,7 +1,7 @@
 # Build docker images
 # We use 2 tag --> 1.latest 2.latest git commit SHA which is stored as .env variable in travis.yml file
 
-docker build -t orhanors/linkedin-client:latest -t orhanors/linkedin-client:$SHA -f ./frontend/Dockerfile ./frontend
+docker build -t orhanors/linkedin-client:latest -t orhanors/linkedin-client:$SHA --build-arg REACT_APP_BE_URL_ARG=/api -f ./frontend/Dockerfile ./frontend
 docker build -t orhanors/linkedin-server:latest -t orhanors/linkedin-server:$SHA -f ./backend/Dockerfile ./backend
 
 #Push images to docker hub
