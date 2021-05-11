@@ -11,6 +11,8 @@ docker push orhanors/linkedin-client:$SHA
 docker push orhanors/linkedin-server:latest
 docker push orhanors/linkedin-server:$SHA
 
+#create namespace
+kubectl create namespace linkedin
 #Apply kubectl
 kubectl apply -f k8s
 
