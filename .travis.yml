@@ -27,11 +27,10 @@ before_install:
     - gcloud container clusters get-credentials linkedin-cluster
 
     ##DOCKER##
-
     #login to docker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-    #build tests
+      #build tests
     - docker build -t orhanors/react-test -f ./frontend/Dockerfile.dev ./frontend
 
 script:
