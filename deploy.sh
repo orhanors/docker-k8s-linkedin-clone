@@ -19,5 +19,5 @@ kubectl apply -f k8s
 #Set new image to deployments
 #If we push new image kubernetes will be using latest image that we pushed
 
-kubectl set image deployments/li-client-deployment client=orhanors/linkedin-client:$SHA
-kubectl set image deployments/li-server-deployment server=orhanors/linkedin-server:$SHA
+kubectl set image deployments/li-client-deployment client=orhanors/linkedin-client:$SHA -n linkedin
+kubectl set image deployments/li-server-deployment server=orhanors/linkedin-server:$SHA -n linkedin
