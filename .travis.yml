@@ -31,11 +31,11 @@ before_install:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       #build tests
-    #- docker build -t orhanors/react-test -f ./frontend/Dockerfile.dev ./frontend
+    - docker build -t orhanors/react-test -f ./frontend/Dockerfile.dev ./frontend
 
-#script:
-# run tests
-#- docker run -e CI=true orhanors/react-test npm test
+script:
+    # run tests
+    - docker run -e CI=true orhanors/react-test npm test
 
 deploy:
     #Don't use any provider, we'll create a deploy.sh and travis'll use it
