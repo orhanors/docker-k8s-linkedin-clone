@@ -24,7 +24,7 @@ before_install:
     #set gcloud project info
     - gcloud config set project li-k8s
     - gcloud config set compute/zone europe-central2-c
-    - gcloud container clusters get-credentials linkedin-cluster
+    - gcloud container clusters get-credentials li-second-cluster
 
     ##DOCKER##
     #login to docker
