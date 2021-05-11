@@ -14,6 +14,9 @@ RUN npm i
 
 COPY . .
 
+ARG REACT_APP_BE_URL_ARG
+ENV REACT_APP_BE_URL=$REACT_APP_BE_URL_ARG
+
 RUN npm run build
 
 FROM nginx
