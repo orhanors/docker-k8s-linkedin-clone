@@ -5,7 +5,7 @@ metadata:
     namespace: linkedin
 
 spec:
-    replicas: 3
+    replicas: 2
 
     selector:
         matchLabels:
@@ -24,7 +24,10 @@ spec:
                       - containerPort: 3001
                   env:
                       - name: CLOUDINARY_CLOUD_NAME
-                        value: orhanors
+                        valueFrom:
+                            configMapKeyRef:
+                                name: linkedin-configmap
+                                key: cloudinary-cloud-name
 
                       - name: CLOUDINARY_API_KEY
                         valueFrom:
