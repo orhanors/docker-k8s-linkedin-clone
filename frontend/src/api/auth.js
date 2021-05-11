@@ -32,7 +32,7 @@ export const signin = async (data) => {
 	const config = {
 		headers: { "Content-type": "application/json" },
 	};
-
+	console.log("REACT_APP: ", REACT_APP_BE_URL);
 	const response = await axios.post(
 		`${REACT_APP_BE_URL}/profile/auth/login`,
 		data,
